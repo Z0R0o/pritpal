@@ -1,1 +1,48 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+.background {
+  background: url('assets/bg.jpg') no-repeat center center/cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #00ffcc;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.hobbies {
+  margin-top: 40px;
+}
+
+.hobbies ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hobbies li {
+  margin: 10px 0;
+}
 
