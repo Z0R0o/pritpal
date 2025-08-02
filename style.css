@@ -1,48 +1,114 @@
-body, html {
+/* Reset & base styles */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
-  background-color: #121212;
+  box-sizing: border-box;
 }
-
-.background {
-  background: url('assets/bg.jpg') no-repeat center center/cover;
-  position: fixed;
+body, html {
   width: 100%;
   height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  background-color: #0f0f0f;
+  overflow-x: hidden;
+}
+
+/* Background image */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/bg.jpg') no-repeat center center/cover;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.25;
+  filter: blur(2px);
 }
 
-.container {
+/* Main wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
+/* Avatar styling */
 .avatar {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   border: 4px solid #00ffcc;
-  box-shadow: 0 0 15px #00ffcc;
+  box-shadow: 0 0 25px #00ffcc;
+  transition: transform 0.3s ease;
+}
+.avatar:hover {
+  transform: scale(1.05);
 }
 
+/* Headings and text */
 h1 {
   margin-top: 20px;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  color: #00ffcc;
+}
+p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.5;
 }
 
-.hobbies {
+/* About Section */
+.about {
+  margin-top: 50px;
+  max-width: 700px;
+  padding: 0 20px;
+}
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #00ffff;
+}
+.about p {
+  font-size: 1.1rem;
+}
+
+/* Social Links */
+.social {
   margin-top: 40px;
 }
-
-.hobbies ul {
-  list-style: none;
-  padding: 0;
+.social a {
+  display: inline-block;
+  margin: 12px;
+  padding: 12px 24px;
+  background-color: #00ffcc;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.social a:hover {
+  background-color: #00ccaa;
 }
 
-.hobbies li {
-  margin: 10px 0;
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+  .social a {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
 }
-
