@@ -22,7 +22,7 @@ body {
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('assets/bg.png') no-repeat center center fixed;
   background-size: cover;
-  filter: blur(12px);
+  filter: blur(6px);
   transform: scale(1.05); /* slightly scale to hide edges */
   z-index: 0;
   pointer-events: none;
@@ -33,7 +33,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(40, 0, 0, 0.6);
+  background-color: rgba(40, 0, 0, 0.55);
   z-index: 1;
 }
 
