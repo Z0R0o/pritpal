@@ -1,9 +1,4 @@
-@font-face {
-  font-family: 'Ghastly Panic';
-  src: url('assets/fonts/GhastlyPanic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
   margin: 0;
@@ -12,11 +7,10 @@
 }
 
 body {
-  font-family: 'Ghastly Panic', sans-serif;
+  font-family: 'Press Start 2P', monospace;
+  background-color: #000;
   color: white;
   overflow: hidden;
-  background: black;
-  text-shadow: 0 0 2px #000;
 }
 
 .bg {
@@ -34,7 +28,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(20, 0, 0, 0.7);
+  background-color: rgba(50, 0, 0, 0.5); /* original blood red tint */
   z-index: 2;
 }
 
@@ -52,63 +46,62 @@ main.centered {
 }
 
 .main-name {
-  font-size: 64px;
-  color: #dd2a2a;
-  text-shadow: 0 0 6px #770000;
+  font-size: 32px;
+  color: #ff3333;
+  text-shadow: 0 0 8px #ff0000;
 }
 
 .tagline {
-  font-size: 20px;
-}
-
-.section {
-  margin-top: 20px;
+  font-size: 12px;
 }
 
 .divider {
-  font-size: 26px;
-  margin-bottom: 10px;
-  color: #bb3333;
-  text-shadow: 0 0 8px #550000;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #ff4444;
+  text-shadow: 0 0 5px #ff0000;
+}
+
+.section {
+  margin-top: 10px;
 }
 
 .about {
-  font-size: 18px;
+  font-size: 10px;
   line-height: 1.6;
 }
 
 .pvp-points {
-  font-size: 18px;
+  font-size: 10px;
   list-style: none;
-  text-align: left;
-  padding-left: 0;
   margin-top: 10px;
+  padding-left: 0;
 }
 
 .pvp-points li {
-  margin: 4px 0;
+  margin: 5px 0;
 }
 
 .discord-btn {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 30px;
-  background-color: #661111;
+  background-color: #ff1111;
   color: white;
-  border: 2px solid #440000;
+  border: 2px solid #aa0000;
   text-decoration: none;
-  font-size: 20px;
-  box-shadow: 0 0 12px #550000aa;
+  font-size: 12px;
+  box-shadow: 0 0 12px #aa0000;
   transition: all 0.3s ease;
 }
 
 .discord-btn:hover {
-  background-color: #440000;
-  box-shadow: 0 0 25px #770000aa;
+  background-color: #aa0000;
+  box-shadow: 0 0 20px #ff0000;
 }
 
 .red {
-  color: #aa2a2a !important;
+  color: #ff3333 !important;
 }
 
 .cyan {
