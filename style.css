@@ -16,26 +16,38 @@ body {
   overflow-x: hidden;
 }
 
-/* background overlay for slight dark effect */
+/* Background overlay with blur but no quality loss */
 .bg {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(40, 0, 0, 0.7);
-  pointer-events: none;
+  background: url('assets/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(12px);
+  transform: scale(1.05); /* slightly scale to hide edges */
   z-index: 0;
+  pointer-events: none;
 }
 
-/* main content center */
+/* Dark overlay so content stands out */
+.bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(40, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Main content wrapper */
 main.centered {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 600px;
   margin: 4rem auto 2rem;
-  padding: 1rem 2rem;
-  background: rgba(30, 0, 0, 0.85);
+  padding: 1.5rem 2rem;
+  background: rgba(30, 0, 0, 0.8);
   border-radius: 16px;
   box-shadow: 0 0 40px #ff333377;
-  backdrop-filter: blur(10px);
+  backdrop-filter: saturate(180%) brightness(120%);
   text-align: center;
 }
 
@@ -102,20 +114,28 @@ main.centered {
 .discord-btn {
   display: inline-block;
   margin-top: 2rem;
-  background-color: #ff2222;
+  background-color: #b22222; /* firebrick red */
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
+  padding: 0.85rem 2.5rem;
+  border-radius: 12px;
   font-family: 'Press Start 2P', monospace;
-  box-shadow: 0 0 20px #ff2222cc;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px #b22222cc;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  border: 2px solid #8b0000; /* dark red border */
+  user-select: none;
 }
 
 .discord-btn:hover {
-  background-color: #cc1111;
-  box-shadow: 0 0 30px #cc1111cc;
+  background-color: #8b0000; /* darker firebrick */
+  box-shadow: 0 0 35px #8b0000cc;
+  transform: scale(1.05);
+}
+
+.discord-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px #8b0000bb;
 }
 
 /* Utility red classes */
@@ -145,7 +165,7 @@ main.centered {
     font-size: 0.9rem;
   }
   .discord-btn {
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.8rem;
     font-size: 0.85rem;
   }
 }
