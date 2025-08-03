@@ -6,15 +6,36 @@
 }
 
 body {
-  min-height: 100vh;
+  font-family: 'Press Start 2P', monospace, cursive;
+  color: #ff9999;
   background: url('assets/bg.png') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Roboto Mono', monospace, Courier, monospace;
-  color: #e0e0e0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
+  user-select: none;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* background overlay for slight dark effect */
+.bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(40, 0, 0, 0.7);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* main content center */
+main.centered {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 4rem auto 2rem;
+  padding: 1rem 2rem;
+  background: rgba(30, 0, 0, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 0 40px #ff333377;
+  backdrop-filter: blur(10px);
   text-align: center;
 }
 
@@ -22,95 +43,109 @@ body {
 .avatar {
   width: 160px;
   height: 160px;
+  margin: 0 auto 1.5rem;
   border-radius: 50%;
-  border: 4px solid #00fff7;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 0 15px #00fff7aa;
+  border: 4px solid #ff3333;
   background: url('assets/avatar.png') center center no-repeat;
   background-size: cover;
+  box-shadow: 0 0 15px #ff3333aa;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .avatar:hover {
-  box-shadow: 0 0 30px #00fff7ff;
+  box-shadow: 0 0 30px #ff4444;
 }
 
-/* Main container */
-.container {
-  background: rgba(10, 10, 10, 0.8);
-  border-radius: 16px;
-  padding: 2rem 3rem;
-  max-width: 800px;
-  width: 100%;
-  box-shadow: 0 0 40px #00fff799;
-  backdrop-filter: blur(10px);
+/* Main Name */
+.main-name {
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  color: #ff4444;
+  text-shadow: 0 0 10px #ff2222;
+  margin-bottom: 0.5rem;
 }
 
-/* Headings */
-h1 {
-  font-size: 2.8rem;
-  color: #00fff7;
-  text-shadow: 0 0 10px #00fff7bb;
-  margin-bottom: 0.4rem;
+/* Taglines */
+.tagline {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: #ff6666;
+  text-shadow: 0 0 6px #ff3333;
   letter-spacing: 2px;
 }
 
-h2 {
-  font-size: 1.5rem;
-  color: #66ffffcc;
-  margin-bottom: 1.5rem;
+/* Section */
+.section {
+  margin-top: 2rem;
+  text-align: center;
 }
 
-/* Links */
-a {
-  color: #00fff7;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #66ffff;
-  text-decoration: underline;
-}
-
-/* Buttons */
-button, .btn {
-  background-color: #00fff7;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  color: #000;
+.divider {
+  font-size: 1.4rem;
+  color: #ff4444;
+  text-shadow: 0 0 10px #ff2222;
+  margin-bottom: 1rem;
+  letter-spacing: 4px;
   font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 0 15px #00fff7cc;
-  transition: background-color 0.3s ease;
 }
 
-button:hover, .btn:hover {
-  background-color: #00cccc;
-  box-shadow: 0 0 20px #00cccccc;
+/* About text */
+.about {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ff9999;
+  white-space: pre-line;
 }
 
-/* Responsive text sizes */
+/* Discord button */
+.discord-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #ff2222;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: 0 0 20px #ff2222cc;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-btn:hover {
+  background-color: #cc1111;
+  box-shadow: 0 0 30px #cc1111cc;
+}
+
+/* Utility red classes */
+.red {
+  color: #ff5555 !important;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.2rem;
-  }
-  .container {
-    padding: 1.5rem 2rem;
-  }
   .avatar {
     width: 120px;
     height: 120px;
   }
-}
-
-/* Utility */
-.text-center {
-  text-align: center;
+  main.centered {
+    margin: 2rem 1rem;
+    padding: 1rem 1.5rem;
+  }
+  .main-name {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+  }
+  .divider {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  .tagline {
+    font-size: 0.9rem;
+  }
+  .discord-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+  }
 }
