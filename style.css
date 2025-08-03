@@ -1,4 +1,10 @@
-/* Reset */
+@font-face {
+  font-family: 'Ghastly Panic';
+  src: url('assets/fonts/GhastlyPanic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,23 +12,19 @@
 }
 
 body {
-  font-family: 'VT323', monospace;
-  color: #ff9999;
-  background: url('assets/bg.png') no-repeat center center fixed;
-  background-size: cover;
-  user-select: none;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
+  font-family: 'Ghastly Panic', sans-serif;
+  color: white;
+  overflow: hidden;
+  background: black;
+  text-shadow: 0 0 2px #000;
 }
 
-/* Background blur with subtle scale */
 .bg {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: url('assets/bg.png') no-repeat center center fixed;
   background-size: cover;
-  filter: blur(6px);
+  filter: blur(4px);
   transform: scale(1.03);
   z-index: 0;
   pointer-events: none;
@@ -33,159 +35,82 @@ body {
   position: absolute;
   inset: 0;
   background-color: rgba(20, 0, 0, 0.7);
-  z-index: 1;
+  z-index: 2;
 }
 
 main.centered {
   position: relative;
-  z-index: 2;
-  max-width: 600px;
-  margin: 4rem auto 2rem;
-  padding: 1.5rem 2rem;
-  background: rgba(30, 0, 0, 0.8);
-  border-radius: 16px;
-  box-shadow: 0 0 40px #ff333377;
-  backdrop-filter: saturate(180%) brightness(120%);
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-}
-
-/* Avatar */
-.avatar {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 1.5rem;
-  border-radius: 50%;
-  border: 4px solid #ff3333;
-  background: url('assets/avatar.png') center center no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 15px #ff3333aa;
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.avatar:hover {
-  box-shadow: 0 0 30px #ff4444;
+  gap: 10px;
+  padding: 20px;
 }
 
 .main-name {
-  font-size: 2.5rem;
-  letter-spacing: 5px;
+  font-size: 64px;
   color: #dd2a2a;
   text-shadow: 0 0 6px #770000;
-  margin-bottom: 0.5rem;
 }
 
 .tagline {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-  color: #ff6666;
-  text-shadow: 0 0 6px #ff3333;
-  letter-spacing: 2px;
+  font-size: 20px;
 }
 
 .section {
-  margin-top: 2rem;
-  text-align: center;
+  margin-top: 20px;
 }
 
 .divider {
-  font-size: 1.4rem;
+  font-size: 26px;
+  margin-bottom: 10px;
   color: #bb3333;
   text-shadow: 0 0 8px #550000;
-  margin-bottom: 1rem;
-  letter-spacing: 4px;
-  font-weight: 700;
 }
 
 .about {
-  font-size: 1rem;
-  line-height: 1.4;
-  color: #ff9999;
-  white-space: pre-line;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-/* PvP Points list styling */
-.pvp-points ul {
+.pvp-points {
+  font-size: 18px;
   list-style: none;
-  margin-top: 2rem;
+  text-align: left;
   padding-left: 0;
-  color: #ff5555;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.8rem;
-  letter-spacing: 1.5px;
+  margin-top: 10px;
 }
 
-.pvp-points ul li {
-  position: relative;
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
+.pvp-points li {
+  margin: 4px 0;
 }
 
-.pvp-points ul li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #ff2222;
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
-/* Discord button */
 .discord-btn {
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 25px;
+  padding: 12px 30px;
   background-color: #661111;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0.85rem 2.5rem;
-  border-radius: 12px;
-  font-family: 'Press Start 2P', monospace;
-  box-shadow: 0 0 12px #550000aa;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  color: white;
   border: 2px solid #440000;
-  user-select: none;
+  text-decoration: none;
+  font-size: 20px;
+  box-shadow: 0 0 12px #550000aa;
+  transition: all 0.3s ease;
 }
 
 .discord-btn:hover {
   background-color: #440000;
   box-shadow: 0 0 25px #770000aa;
-  transform: scale(1.05);
 }
 
-.discord-btn:active {
-  transform: scale(0.95);
-  box-shadow: 0 0 15px #8b0000bb;
-}
-
-/* Utility red class */
 .red {
   color: #aa2a2a !important;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .avatar {
-    width: 120px;
-    height: 120px;
-  }
-  main.centered {
-    margin: 2rem 1rem;
-    padding: 1rem 1.5rem;
-  }
-  .main-name {
-    font-size: 1.8rem;
-    letter-spacing: 3px;
-  }
-  .divider {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-  }
-  .tagline {
-    font-size: 0.9rem;
-  }
-  .discord-btn {
-    padding: 0.6rem 1.8rem;
-    font-size: 0.85rem;
-  }
+.cyan {
+  color: #cceeff;
 }
